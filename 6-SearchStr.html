@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search String</title>
+</head>
+<body>
+    <input type="text" id="inptxt" placeholder="Enter String">
+    <input type="text" id="srchtxt" placeholder="Search a string">
+    <button onclick="searchstr()">Submit</button>
+   <fieldset>
+    <p>Output</p>
+      Entered string is: <p id="entered"> </p>
+      Number of spaces: <p id="sp"></p>
+      Number of Alphabets: <p id="alp"></p>
+      Number of Numeric values: <p id="num"></p>
+      Number of occurence of search string is <p id="occur"></p>
+      position of the search string is <p id="pos"></p>
+      
+</fieldset>
+</body>
+ <script>
+    function searchstr() {
+        str = document.getElementById("inptxt").value
+        srchstr = document.getElementById("srchtxt").value
+
+        document.getElementById("entered").innerHTML = str
+
+        spaces = 0
+        alpha = 0
+        num = 0
+        spaces = 0
+        spaces = 0
+
+        for(i=0;i<str.length;i++)
+        {
+            if(str[i] == " ") spaces++;
+            else if(str[i] >="A" && str[i]<="z") alpha++;
+            else if(str[i] >="0" && str[i]<="9" ) num++;
+        }
+
+        document.getElementById("sp").innerHTML = spaces
+
+        document.getElementById("alp").innerHTML = alpha
+
+        document.getElementById("num").innerHTML = num
+
+       words = str.split(" ")
+       count=0;
+       for(i=0;i<words.length;i++)
+       {
+        if(words[i]== srchstr) count++;
+
+       }
+       
+       position = str.search(srchstr);
+
+       document.getElementById("occur").innerHTML = count;
+       document.getElementById("pos").innerHTML = position;
+
+
+    }
+ </script>
+</html>

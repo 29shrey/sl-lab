@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title> TOTAL BILLING </title>
+        <h1 align = "center"> Total Billing </h1>
+        Item Name : <input type = "text" id = "name"/><br>
+        <br>
+        Item Price : <input type = "text" id = "price"/><br>
+        <br>
+        Item Quantity : <input type = "text" id = "qty"/><br>
+        <br>
+        <input type = "button" onclick = calculate()  value = "submit" id = "submit" /><br>
+        <br>
+        The total price is : <span id = "result"></span><br>
+        <br>
+        <input type = "button" onclick = warning()  value = "paid" id = "paid" /><br>
+    </head>
+    <body>
+        <script>
+            function calculate(){
+                x = document.getElementById("price").value;
+                y = document.getElementById("qty").value;
+                res = x * y;
+                document.getElementById("result").innerHTML = res;
+            }
+            function warning(){
+                alert("Amount paid!!")
+            }
+        </script>
+    </body>
+</html>

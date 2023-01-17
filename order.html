@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <h1 align = "center"> MY BAKE HOUSE </h1>
+    <h3> Place Order</h3>
+</head>
+<body>
+    <p> Choco Lava Cake </p>
+    <p> Item Quantity: <input type = "text"   id = "Q1" /> </p>
+    <br>
+    <p> Tiramisu Cake </p>
+    <p> Item Quantity : <input type = "text"  id = "Q2" /> </p>
+    <input type = "button" onclick = "calculate()"  value = "submit"  id = "submit"/>
+    <p>The total price is : <span id = "result"> </span></p>
+    <script>
+        function calculate(){
+            x = 50 * document.getElementById("Q1").value
+            y = 70 * document.getElementById("Q2").value;
+            res = x + y;
+            document.getElementById("result").innerHTML = res;
+        }
+    </script>
+</body>
+</html>

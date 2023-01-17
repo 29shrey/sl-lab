@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> STRING CONVERSION </title>
+        <h1 align = "center"> String conversion </h1>
+        <p>
+            The input string is:<input type = "text" id = "str1" /><br>
+            <br>
+            <input type = "button" onclick = convert() id = "submit" value = "convert"/><br>
+            <br>
+            The converted string is:<span id = "str2"></span>
+            <br>
+        </p>
+    </head>
+    <body>
+        <script>
+            function convert(){
+                str1 = document.getElementById("str1").value
+                str = str1.split("")
+                for(i = 0; i < str.length; i++){
+                    switch(str[i]){
+                        case ' ': break
+                        case 'z': str[i] = 'a'
+                                  break
+                        case 'Z': str[i] = 'A'
+                                  break 
+                        default: str[i] = String.fromCharCode(1 + str[i].charCodeAt())
+                    }
+                    switch(str[i]){
+                        case 'a':
+                        case 'e':
+                        case 'i':
+                        case 'o':
+                        case 'u': str[i] = str[i].toUpperCase()
+                    }
+                }
+                str = str.join("")
+                document.getElementById("str2").innerHTML = str
+            }
+        </script>
+    </body>
+</html>
